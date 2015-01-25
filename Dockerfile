@@ -7,8 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y apache2 && \
-  apt-get install --no-install-recommends -y openssl ca-certificates git && \
-  apt-get install --no-install-recommends -y python python-setuptools python-virtualenv python-dev gcc swig dialog libaugeas0 libssl-dev && \
+  apt-get install --no-install-recommends -y git && \
+  apt-get install --no-install-recommends -y python python-setuptools python-virtualenv python-dev gcc swig dialog libaugeas0 openssl libssl-dev ca-certificates && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Quick and dirty fix for https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=696327
@@ -16,10 +16,8 @@ RUN ln -s /usr/include/x86_64-linux-gnu/openssl/opensslconf.h /usr/include/opens
 
 RUN cd /opt && git clone https://github.com/letsencrypt/lets-encrypt-preview.git
 WORKDIR /opt/lets-encrypt-preview
-# For some reason, first installation attempt fails
 RUN \
   virtualenv --no-site-packages -p python2 venv && \
-  ./venv/bin/python setup.py install || \
   ./venv/bin/python setup.py install
 
 COPY run.sh /opt/run.sh
