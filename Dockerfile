@@ -8,7 +8,7 @@ RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y apache2 && \
   apt-get install --no-install-recommends -y git && \
-  apt-get install --no-install-recommends -y python python-setuptools python-virtualenv python-dev gcc swig dialog libaugeas0 openssl libssl-dev ca-certificates && \
+  apt-get install --no-install-recommends -y python python-setuptools python-virtualenv python-dev gcc swig dialog libaugeas0 openssl libssl-dev libffi-dev ca-certificates && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Quick and dirty fix for https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=696327
