@@ -1,3 +1,5 @@
+**Please note:** Let's Encrypt now ships it's own [Dockerfile](https://github.com/letsencrypt/lets-encrypt-preview/blob/master/Dockerfile) (build on [quay.io](https://quay.io/repository/letsencrypt/lets-encrypt-preview)), which superseeds this downstream project. I will keep it around, though; at least as long as it does not involve notable effort.
+
 # Lets Encrypt Demo Client as Docker Image
 
 (c) 2015 Jens Erat <email@jenserat.de>, MIT license
