@@ -14,7 +14,7 @@ Run the example publishing ports 80 and 443, and set an environment variable `se
       --env servername=www.example.com \
       --publish 80:80 \
       --publish 443:443 \
-      jenserat/lets-encrypt
+      jenserat/lets-encrypt-preview
 
 Apache's default web site will automatically be reconfigrued for your `$servername`. When Apache 2 is started, you will be dropped to a bash. The `letsencrypt` client is already present in your path. See `letsencrypt --help`, the [letsencrypt README on GitHub](https://github.com/letsencrypt/lets-encrypt-preview#command-line-usage) and the [official web site](https://letsencrypt.org/howitworks/) for details.
 
